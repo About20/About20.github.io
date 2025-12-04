@@ -8,6 +8,71 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Comet Browser Galaxy Section -->
+<section class="comet-galaxy">
+  <div class="comet-galaxy-bg">
+    <div id="comet-stars"></div>
+
+    <!-- Comets -->
+    <div class="comet-orbit comet-1"></div>
+    <div class="comet-orbit comet-2"></div>
+    <div class="comet-orbit comet-3"></div>
+
+    <div class="comet-galaxy-content">
+      <h2 class="comet-logo">Comet Browser</h2>
+      <p class="comet-subtitle">
+        Explore the web like a galaxy of opportunities, powered by your AI assistant.
+      </p>
+
+      <!-- Bottom glass search bar -->
+      <div class="comet-shell">
+        <div class="comet-chip">
+          <span class="comet-status-dot"></span>
+          <span>Assistant</span>
+        </div>
+
+        <div class="comet-input-wrap">
+          <input
+            class="comet-input"
+            type="text"
+            placeholder="Ask Comet or type a URL"
+          />
+          <span class="comet-hint">Try: “Summarize my projects section”</span>
+        </div>
+
+        <button class="comet-icon-btn" title="Voice">
+          🎙
+        </button>
+        <button class="comet-icon-btn" title="New tab">
+          ＋
+        </button>
+        <span class="comet-kbd">Ctrl ⌥ C</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Starfield only for this section – does not touch other elements
+  (function () {
+    const starsContainer = document.getElementById("comet-stars");
+    if (!starsContainer) return;
+
+    const starCount = 160;
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement("div");
+      star.className = "comet-star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * 100 + "vh";
+      const scale = Math.random() * 1.2 + 0.4;
+      star.style.transform = "scale(" + scale + ")";
+      star.style.animationDuration = 1.5 + Math.random() * 2 + "s";
+      star.style.animationDelay = Math.random() * 2 + "s";
+      starsContainer.appendChild(star);
+    }
+  })();
+</script>
+
     <!-- Header/Navigation -->
     <header class="header">
         <div class="container">
